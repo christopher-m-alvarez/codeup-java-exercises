@@ -23,8 +23,8 @@ public class ConsoleExercises {
 //        System.out.println("You entered: --> \"" + string4 + "\" <--");
 
         System.out.println("Enter a length and width.");
-        int userLength = in.nextInt();
-        int userWidth = in.nextInt();
+        double userLength = Double.parseDouble(in.nextLine());
+        double userWidth = Double.parseDouble(in.nextLine());
         System.out.println("The Area is: --> " + (userLength * userWidth) + "<--");
         System.out.println("The perimeter is: --> " + ((userLength * 2) + (userWidth * 2)) + "<--");
 
@@ -43,7 +43,7 @@ public class ConsoleExercises {
 // #1
 //        double pi = 3.14159;
 //
-//        System.out.format("%.2f%n", pi);
+//        System.out.format("%.2f", pi);
     }
 
 }
