@@ -1,2 +1,4 @@
-package grades;public class Student {
+package grades;
+
+public class Student {
 }
