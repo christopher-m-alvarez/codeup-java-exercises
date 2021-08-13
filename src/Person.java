@@ -2,7 +2,7 @@ public class Person {
 
     private String name;
 
-    public Person(String name){
+    public Person(String name) {
         this.name = name;
     }
 
@@ -24,11 +24,11 @@ public class Person {
 
 
     public static void main(String[] args) {
-//        Person chris = new Person("Chris");
-//
-//        System.out.println(chris.getName());
-//        chris.sayHello();
-//        // .setName("chris") then print name again
+        Person chris = new Person("Chris");
+
+        System.out.println(chris.getName());
+        chris.sayHello();
+        // .setName("chris") then print name again
 
 
 
