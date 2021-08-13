@@ -2,15 +2,15 @@ package movies;
 
 public class Movie {
 
-    private String name;
     private String category;
+    private String name;
 
 
-    public Movie(String name, String category) {
-        this.name = name;
+
+    public Movie(String category, String name) {
         this.category = category;
+        this.name = name;
     }
-
 
     public String getName() {
         return name;

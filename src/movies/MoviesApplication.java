@@ -83,7 +83,7 @@ public class MoviesApplication {
 
     // RETURNS THE MENU DISPLAY
     private static String returnMenuDisplay() {
-        String menu = "Choose a number\n" +
+        String menu = "What would you like to do?\n" +
                 "\n" +
                 "0 - exit\n" +
                 "1 - view all movies\n" +

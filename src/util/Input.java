@@ -1,7 +1,6 @@
 package util;
 
-
-
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Input {
@@ -13,46 +12,46 @@ public class Input {
     }
 
     public String getString() {
-        System.out.println("Say something");
+//        System.out.println("Type Something: ");
         String userString = scanner.nextLine();
-         return userString;
+        return userString;
     }
 
-    public boolean yesNo(){
-        System.out.println("(y/n)?");
-        String userAnswer = scanner.nextLine();
+    public boolean yesNo() {
+//        System.out.println("Select (y/n):");
+        String userAnswer = scanner.next();
+        scanner.nextLine();
         return userAnswer.equals("y");
     }
 
-    public int getInt(int min,int max){
-        System.out.println("type an integer");
+    public int getInt(int min, int max) {
+//        System.out.println("Give me an integer: ");
         int userInt = scanner.nextInt();
 
-        if (userInt < min || userInt > max){
-            System.out.println("try again");
-            return getInt(min,max);
+        if (userInt < min || userInt > max) {
+            System.out.println("Invalid input! Try again!");
+            return getInt(min, max);
         } else {
-            System.out.println("good");
+//            System.out.println("That's a valid integer.");
             return userInt;
         }
     }
 
     public int getInt() {
-        System.out.println("type an integer");
+        System.out.println("Give me an integer: ");
         int userInt = scanner.nextInt();
         return userInt;
     }
 
-
-    public Double getDouble(double min,double max){
-        System.out.println("type a decimal number");
+    public double getDouble(double min, double max) {
+        System.out.println("Give me an decimal: ");
         double userDouble = scanner.nextDouble();
 
-        if (userDouble < min || userDouble > max){
-            System.out.println("try again");
-            return getDouble(min,max);
+        if (userDouble < min || userDouble > max) {
+            System.out.println("Try again!");
+            return getDouble(min, max);
         } else {
-            System.out.println("good");
+            System.out.println("That's a valid decimal.");
             return userDouble;
         }
     }
@@ -62,5 +61,6 @@ public class Input {
         double userDouble = scanner.nextDouble();
         return userDouble;
     }
+
 
 }
