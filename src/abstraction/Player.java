@@ -1,23 +1,55 @@
 package abstraction;
 
 public class Player {
+    // character name must be between 4 and 100 characters in length
     private String characterName;
+    private int health;
+
+    // this is a problem. consider if we had 50 different types of weapons
+    // and the player can only ever use one of them at a time
+//    private Sword currentSword;
+//    private Club currentClub;
+//    private Dagger currentDagger;
+//    private Wand currentWWand;
+//    private Bow currentBow;
+
     private Weapon currentWeapon;
 
+    public Player(String characterName) {
+        if(characterName.length() > 100 || characterName.length() < 4) {
+            throw new IllegalArgumentException("Character name must be between 4 and 100 characters");
+        }
+
+        this.characterName = characterName;
+        health = 100;
+    }
 
     public static void main(String[] args) {
-        Player bob = new Player();
+        Player currentPlayer = new Player("Bobby");
+        currentPlayer.setCurrentWeapon(new Sword());
 
-        bob.setCurrentWeapon(new Sword());
-        bob.useWeapon();
+        currentPlayer.useWeapon();
 
+        // bobby switches to a club
+        currentPlayer.setCurrentWeapon(new Club());
+        currentPlayer.useWeapon();
 
-        bob.setCurrentWeapon(new Club());
-        bob.useWeapon();
+        currentPlayer.setCurrentWeapon(new Bow());
+        currentPlayer.useWeapon();
     }
 
     private void useWeapon() {
-        System.out.println(getCharacterName() + "attacks with their weapon and it does " + this.getCurrentWeapon().getDamage() + " damage");
+        System.out.println(getCharacterName() + " attacks with his/her weapon and it does " + this.getCurrentWeapon().getDamage() + " damage");
+    }
+
+    // accessors
+
+    public String getCharacterName() {
+        return characterName;
+    }
+
+    public void setCharacterName(String characterName) {
+        this.characterName = characterName;
     }
 
     public Weapon getCurrentWeapon() {
@@ -26,12 +58,5 @@ public class Player {
 
     public void setCurrentWeapon(Weapon currentWeapon) {
         this.currentWeapon = currentWeapon;
-    }
-    public String getCharacterName() {
-        return characterName;
-    }
-
-    public void setCharacterName(String characterName) {
-        this.characterName = characterName;
     }
 }

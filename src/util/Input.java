@@ -25,27 +25,44 @@ public class Input {
     }
 
     public int getInt(int min, int max) {
-//        System.out.println("Give me an integer: ");
-        int userInt = scanner.nextInt();
+        System.out.println("Give me an integer between " + min + " and " + max + ": ");
+        int userInt;
+
+        try {
+            userInt = Integer.valueOf(this.getString());
+        } catch (NumberFormatException e) {
+            System.out.println("That is not an integer!");
+            return getInt(min, max);
+        }
 
         if (userInt < min || userInt > max) {
             System.out.println("Invalid input! Try again!");
             return getInt(min, max);
         } else {
-//            System.out.println("That's a valid integer.");
             return userInt;
         }
     }
 
     public int getInt() {
         System.out.println("Give me an integer: ");
-        int userInt = scanner.nextInt();
-        return userInt;
+        try {
+            return Integer.valueOf(this.getString());
+        } catch (NumberFormatException e) {
+            System.out.println("That is not an integer!");
+            return getInt();
+        }
     }
 
     public double getDouble(double min, double max) {
         System.out.println("Give me an decimal: ");
-        double userDouble = scanner.nextDouble();
+        double userDouble;
+
+        try {
+            userDouble = Double.valueOf(this.getString());
+        } catch (NumberFormatException e) {
+            System.out.println("That is not a double!");
+            return getDouble(min, max);
+        }
 
         if (userDouble < min || userDouble > max) {
             System.out.println("Try again!");
@@ -58,9 +75,14 @@ public class Input {
 
     public double getDouble() {
         System.out.println("Give me a decimal: ");
-        double userDouble = scanner.nextDouble();
-        return userDouble;
+        try {
+            return Double.valueOf(this.getString());
+        } catch (NumberFormatException e) {
+            System.out.println("That is not a double!");
+            return getDouble();
+        }
     }
+
 
 
 }
